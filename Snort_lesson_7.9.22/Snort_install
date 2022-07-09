@@ -1,0 +1,7 @@
+edit the file /etc/apt/sources.list, and add this line to the end: deb http://deb.debian.org/debian buster main. (You may need sudo.)
+
+sudo apt update -y
+
+Install snort in Kali: sudo apt install snort
+
+Configure snort with default options.

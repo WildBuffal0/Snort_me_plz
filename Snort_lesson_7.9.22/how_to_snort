@@ -1,0 +1,9 @@
+Open Wireshark
+run scan on target IP
+save scan as .pcap tmpdump file
+run your snort command with the captured file
+EX: snort -k none -l ./logs/ -c ./fullstack.rules -r ./udp_undetected.pcap
+-l creates a log file
+-c is your rules file
+-r is your packet cap file
+With this file the I would not get any alerts unless I specifially run a UDP scan. 

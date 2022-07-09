@@ -1,0 +1,11 @@
+alert icmp any any -> 192.168.56.106 any
+#alert any connection from any source
+
+alert icmp any any -> 192.168.56.106 any (msg: "NMAP ping sweep Scan"; dsize:0;sid:10000004; rev: 1;)
+#alert any Nmap PING scan
+
+alert tcp any any -> 192.168.56.106 any (msg: “TCP SYN flood”; flags:!A; flow: stateless; detection_filter: track by_dst, count 70, seconds 10; sid:2000003;)
+#alert any TCP SYN scan
+
+alert tcp any any -> 192.168.56.106 any (msg:"Nmap NULL Scan"; flags:0; sid:1000009; rev:1; )
+#alert any Nmap NULL scan
